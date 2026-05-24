@@ -2,43 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-/**
- * # Argument Parser Utility
- * Ideas / implementation notes for the argument parser utility.
- *
- * ## Specifications
- *
- * This program (rather the argument parsing implementation) should do the following things:
- *
- * - Add arguments of types to be parsed in any C program.
- *      - types
- *          - switch (bool), yes or no (1 | 0) flags -- no value
- *          - string or char*, most likely path
- *          - path, raw type is char* but validate location on system w/ syscall
- *          - integer, an integer value
- *              - integers with certain valid values (enum types)
- *          - ... (not really sure what other types of arguments are useful in a program)
- *
- * ## Imagined use
- *
- * 1. The programmer includes this project in their entry file, & invokes from main.
- * 2. The programmer adds the desired arguments to a data strcture which will track the type & of course number of arguments to expect.
- *
- * ```c
- * addFlagArg(argDataStruct, "--my-flag-name", "-s", "this is the arguments help message / description");
- * addStringArg(argDataStruct, "--my-string-argument-name", "-m", "this is the arguments help message / description")
- * addIntegerArg(ardDataStruct, "--my-")
- * ```
- *
- * 3. The programmer then invokes a function that consumes their arugment configuration & this will return another structure containing the values of their arguments, or any errors that occured during the parsing of arguments.
- *
- * ```c
- * parseArguments(argDataStruct, argc, argv);
- * ```
- *
- * 4. Without the programmer explicitly needing to define this, there is a `-h | --help` parameter, which collects the defined help descriptions & shows a message w/ the help values to stdout.
- */
-
 #define HELP_STR    "Experimental argument parsing program.\n" \
                     "\tAuthor: Will Otterbein\n" \
                     "\tArguments:\n" \
