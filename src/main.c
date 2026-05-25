@@ -60,8 +60,9 @@ int main(int argc, char** argv) {
             // Flag type, no value processing
             (*(argVals + USE_WIN_PATH)) = "1"; // TODO, WO: everything needs to be strings rn, need to come up w/ struct & abstract more of the impl
             (*(fArgs + USE_WIN_PATH)) = 1;
-            continue; // no need to perform further increment because value is defined automatically
-        } else if (strcmp(argStr, "-h") == 0) {
+            continue;
+        // Show the help string if that is requested 
+        } else if (strcmp(argStr, "-h") == 0 || strcmp(argStr, "--help") == 0) {
             printf("%s\n", HELP_STR);
             exit(0); // show help string & then dip
         }
