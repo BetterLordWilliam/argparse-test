@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "argparse.h"
 
 #define HELP_STR    "Experimental argument parsing program.\n" \
                     "\tAuthor: Will Otterbein\n" \
@@ -19,6 +20,8 @@ void println(char* str) {
  * Experimental argument parsing.
  */
 int main(int argc, char** argv) {
+    exampleFunction();
+
     int nValArgs = 2;
     char* fArgs = (char*)calloc(nValArgs * sizeof(char), sizeof(char)); // found arguments (zerod character array)
     char** argVals = (char**)malloc(nValArgs * sizeof(char*)); // give me `n` char* slots in memory (1 for each arg literal value)
